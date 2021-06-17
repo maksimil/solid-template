@@ -1,6 +1,4 @@
-import "windi.css";
-import { hydrate } from "solid-js/web";
-
+import { render } from "solid-js/web";
 import App from "./App";
 
-hydrate(() => <App />, document.body);
+render(() => <App />, document.body);

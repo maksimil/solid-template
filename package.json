@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:ssr": "rollup -c ssr/rollup.config.js"
+    "build:ssg": "rollup -c ssg/rollup.config.js",
+    "start:ssg": "node ssg/build/main.js",
+    "run:ssg": "npm run build:ssg && npm run start:ssg"
   },
   "license": "ISC",
   "devDependencies": {
