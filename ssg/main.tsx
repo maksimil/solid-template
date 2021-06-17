@@ -3,9 +3,6 @@ import Document from "./Document";
 import * as fs from "fs";
 import * as path from "path";
 
-const { html, script } = renderToString(() => <Document />);
+const html = renderToString(() => <Document />);
 
-fs.writeFileSync(
-  path.resolve(__dirname, "../public/index.html"),
-  html + script
-);
+fs.writeFileSync(path.resolve(__dirname, "../public/index.html"), html);

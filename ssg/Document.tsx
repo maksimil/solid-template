@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import { HydrationScript } from "solid-js/web";
 import App from "../src/App";
 
 const Document: Component = () => {
@@ -12,6 +13,7 @@ const Document: Component = () => {
       </head>
       <body>
         <App />
+        <HydrationScript />
       </body>
     </html>
   );
