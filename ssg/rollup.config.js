@@ -1,31 +1,36 @@
 import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
+import { defineConfig } from "rollup";
 
-const extensions = [".ts", ".tsx"];
+const extensions = [".ts", ".tsx", ".js", ".jsx"];
 
-export default [
-  // {
-  //   input: "ssg/index.tsx",
-  //   output: [
-  //     {
-  //       dir: "ssg/public/js",
-  //       format: "esm",
-  //     },
-  //   ],
-  //   plugins: [
-  //     nodeResolve({ extensions, exportConditions: ["node"] }),
-  //     babel({
-  //       babelHelpers: "bundled",
-  //       extensions,
-  //       presets: [
-  //         ["solid", { generate: "dom", hydratable: true }],
-  //         "@babel/preset-typescript",
-  //       ],
-  //     }),
-  //     // terser(),
-  //   ],
-  // },
+export default defineConfig([
+  {
+    input: "ssg/index.tsx",
+    output: [
+      {
+        dir: "build/js",
+        format: "esm",
+      },
+    ],
+    preserveEntrySignatures: false,
+    plugins: [
+      nodeResolve({
+        extensions,
+        exportConditions: ["solid"],
+      }),
+      babel({
+        babelHelpers: "bundled",
+        extensions,
+        presets: [
+          ["solid", { generate: "dom", hydratable: true }],
+          "@babel/preset-typescript",
+        ],
+      }),
+      terser(),
+    ],
+  },
   {
     input: "ssg/main.tsx",
     output: [
@@ -39,7 +44,7 @@ export default [
     plugins: [
       nodeResolve({
         preferBuiltins: true,
-        exportConditions: ["node"],
+        exportConditions: ["solid"],
         extensions,
       }),
       babel({
@@ -52,4 +57,4 @@ export default [
       }),
     ],
   },
-];
+]);

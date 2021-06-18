@@ -1,4 +1,4 @@
 node_modules
 dist
 ssg/build
-ssg/public
+build

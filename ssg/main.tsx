@@ -5,4 +5,4 @@ import * as path from "path";
 
 const html = renderToString(() => <Document />);
 
-fs.writeFileSync(path.resolve(__dirname, "../public/index.html"), html);
+fs.writeFileSync(path.resolve(__dirname, "../../build/index.html"), html);

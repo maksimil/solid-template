@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "description": "My solid + vite project + ts",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build:ssg": "rollup -c ssg/rollup.config.js",
-    "start:ssg": "node ssg/build/main.js",
-    "run:ssg": "npm run build:ssg && npm run start:ssg"
+    "dev": "tsc && vite",
+    "build:vite": "tsc && vite build",
+    "build:ssg": "npm run build:ssg-script && node ssg/build/main.js",
+    "build:ssg-script": "tsc && rollup -c ssg/rollup.config.js"
   },
   "license": "ISC",
   "devDependencies": {
@@ -15,8 +14,9 @@
     "@babel/preset-typescript": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "rollup": "^2.51.2",
+    "rollup": "^2.52.1",
     "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.4",
     "vite": "^2.3.6",
     "vite-plugin-solid": "^2.0.0-rc.2",
     "vite-plugin-windicss": "^0.16.7"
