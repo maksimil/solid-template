@@ -10,6 +10,8 @@ const Document: Component = () => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <script src="/js/index.js" type="module"></script>
+        <link rel="stylesheet" href="windi.css" />
       </head>
       <body>
         <App />
