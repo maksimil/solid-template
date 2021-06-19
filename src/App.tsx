@@ -1,11 +1,22 @@
-import { Component } from "solid-js";
-import Counter from "./Counter";
+import { Component, Suspense } from "solid-js";
+import { Router, Link, Route } from "solid-app-router";
+import { routes, HOME, BYE } from "./routes";
 
 const App: Component = () => {
   return (
     <div>
-      <p class="text-4xl text-green-700 text-center py-20">Hello ttailwind!</p>
-      <Counter initial={0}></Counter>
+      <div>div</div>
+      <Router routes={routes} initialURL="/">
+        <ul>
+          <Link href={HOME}>Home</Link>
+        </ul>
+        <ul>
+          <Link href={BYE}>Bye</Link>
+        </ul>
+        <Suspense fallback={<span>loading</span>}>
+          <Route />
+        </Suspense>
+      </Router>
     </div>
   );
 };

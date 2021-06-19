@@ -8,7 +8,7 @@ specifiers:
   http-server: ^0.12.3
   rollup: ^2.52.1
   rollup-plugin-terser: ^7.0.2
-  rollup-plugin-windicss: ^1.0.4
+  solid-app-router: ^0.0.45
   solid-js: ^1.0.0-rc.5
   typescript: ^4.3.4
   vite: ^2.3.6
@@ -17,6 +17,7 @@ specifiers:
   windicss: ^3.1.3
 
 dependencies:
+  solid-app-router: 0.0.45_solid-js@1.0.0-rc.5
   solid-js: 1.0.0-rc.5
 
 devDependencies:
@@ -27,21 +28,16 @@ devDependencies:
   http-server: 0.12.3
   rollup: 2.52.1
   rollup-plugin-terser: 7.0.2_rollup@2.52.1
-  rollup-plugin-windicss: 1.0.4_rollup@2.52.1
   typescript: 4.3.4
-  vite: 2.3.6
+  vite: 2.3.7
   vite-plugin-solid: 2.0.0-rc.2
-  vite-plugin-windicss: 0.16.7_vite@2.3.6
+  vite-plugin-windicss: 0.16.7_vite@2.3.7
   windicss: 3.1.3
 
 packages:
 
   /@antfu/utils/0.1.6:
     resolution: {integrity: sha512-1lcCCEOv4gYlYa/OCjM2JA5nbNll04mNMhSXYu4QetbG14m3LdCvkyDAPlc2AmqRQEqkKpJldRL++9sPpOIydw==}
-    dev: true
-
-  /@antfu/utils/0.1.7:
-    resolution: {integrity: sha512-XbmXbhrjfxQq+ishOKeUIK1VYxQV0B+ZkAQkz00bxhmQd5izdT0YRSDwkyH/KX46gFVBMd+6anvSDlciUt3L4A==}
     dev: true
 
   /@babel/code-frame/7.14.5:
@@ -535,20 +531,6 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.0.4:
-    resolution: {integrity: sha512-1Eqw+/lhk3vqW8vgttmLDbzE6YIFL047Kuy/v6jhQd3w7RG+fPbQE6YwnqJerPYvCcRwujQ9ABrLr0+cS+i0tQ==}
-    dependencies:
-      '@antfu/utils': 0.1.7
-      debug: 4.3.2
-      fast-glob: 3.2.5
-      jiti: 1.10.1
-      magic-string: 0.25.7
-      micromatch: 4.0.4
-      windicss: 3.1.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -744,6 +726,12 @@ packages:
 
   /esbuild/0.12.5:
     resolution: {integrity: sha512-vcuP53pA5XiwUU4FnlXM+2PnVjTfHGthM7uP1gtp+9yfheGvFFbq/KyuESThmtoHPUrfZH5JpxGVJIFDVD1Egw==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+
+  /esbuild/0.12.9:
+    resolution: {integrity: sha512-MWRhAbMOJ9RJygCrt778rz/qNYgA4ZVj6aXnNPxFjs7PmIpb0fuB9Gmg5uWrr6n++XKwwm/RmSz6RR5JL2Ocsw==}
     hasBin: true
     requiresBuild: true
     dev: true
@@ -1062,6 +1050,15 @@ packages:
       source-map-js: 0.6.2
     dev: true
 
+  /postcss/8.3.5:
+    resolution: {integrity: sha512-NxTuJocUhYGsMiMFHDUkmjSKT3EdH4/WbGF6GCi1NDGk+vbcUTun4fpbOqaPtD8IIsztA2ilZm2DhYCuyN58gA==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      colorette: 1.2.2
+      nanoid: 3.1.23
+      source-map-js: 0.6.2
+    dev: true
+
   /qs/6.10.1:
     resolution: {integrity: sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==}
     engines: {node: '>=0.6'}
@@ -1105,18 +1102,6 @@ packages:
       rollup: 2.52.1
       serialize-javascript: 4.0.0
       terser: 5.7.0
-    dev: true
-
-  /rollup-plugin-windicss/1.0.4_rollup@2.52.1:
-    resolution: {integrity: sha512-zBckOYI415UTL7g82BqhOlX+rUUYkVlAK3Jlaz8peKBDJtAX3Q6onsuc6pK21Abona0bH7OaMCMTd2p7ZhMmtA==}
-    peerDependencies:
-      rollup: ^2.0.0
-    dependencies:
-      '@windicss/plugin-utils': 1.0.4
-      rollup: 2.52.1
-      windicss: 3.1.3
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /rollup/2.50.5:
@@ -1171,6 +1156,14 @@ packages:
       get-intrinsic: 1.1.1
       object-inspect: 1.10.3
     dev: true
+
+  /solid-app-router/0.0.45_solid-js@1.0.0-rc.5:
+    resolution: {integrity: sha512-tWsZS1B8ClAxNcZgrYPbke5ebz0TN9dS/z4BotN6NVWE1mfW3k0EWvYKwvrefCyRlKu3boruEJe5yf3XxKxBtg==}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.0.0-rc.5
+    dev: false
 
   /solid-js/1.0.0-rc.5:
     resolution: {integrity: sha512-0jGV4DucYQPGMsXPoYzg0l5JucrMjE9VqH5Pfbi9WivJU7v3YS0hl2zWis89GFML5cYuCRErZ+qcquwzMrRgaA==}
@@ -1285,7 +1278,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-windicss/0.16.7_vite@2.3.6:
+  /vite-plugin-windicss/0.16.7_vite@2.3.7:
     resolution: {integrity: sha512-fNBLO2EBdQsJNU3IyehSmqPdrHc6Ve+hPYDaf5SrW8nGd9Wbd8ZVh6cX/1blRcjMw0qOjgcx7GM8pRWBjhzt3Q==}
     peerDependencies:
       vite: ^2.0.1
@@ -1293,7 +1286,7 @@ packages:
       '@windicss/plugin-utils': 0.16.7
       chalk: 4.1.1
       debug: 4.3.2
-      vite: 2.3.6
+      vite: 2.3.7
       windicss: 3.0.12
     transitivePeerDependencies:
       - supports-color
@@ -1308,6 +1301,19 @@ packages:
       postcss: 8.3.0
       resolve: 1.20.0
       rollup: 2.50.5
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/2.3.7:
+    resolution: {integrity: sha512-Y0xRz11MPYu/EAvzN94+FsOZHbSvO6FUvHv127CyG7mV6oDoay2bw+g5y9wW3Blf8OY3chaz3nc/DcRe1IQ3Nw==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.12.9
+      postcss: 8.3.5
+      resolve: 1.20.0
+      rollup: 2.52.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
