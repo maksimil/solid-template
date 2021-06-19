@@ -2,6 +2,7 @@ import nodeResolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import { defineConfig } from "rollup";
+import * as fs from "fs";
 
 const extensions = [".ts", ".tsx", ".js", ".jsx"];
 
@@ -29,6 +30,25 @@ export default defineConfig([
         ],
       }),
       terser(),
+      {
+        name: "manifest",
+        generateBundle: (options, bundle, isWrite) => {
+          let preloadlist = [];
+
+          Object.keys(bundle).forEach((fname) => {
+            if (fname !== "index.js") {
+              preloadlist.push(`/js/${fname}`);
+            }
+          });
+
+          fs.mkdirSync("./ssg/build", { recursive: true });
+
+          fs.writeFileSync(
+            "./ssg/build/preloadlist.js",
+            `export default ${JSON.stringify(preloadlist)};`
+          );
+        },
+      },
     ],
   },
   {

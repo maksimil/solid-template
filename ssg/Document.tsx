@@ -2,7 +2,10 @@ import { Component } from "solid-js";
 import { HydrationScript } from "solid-js/web";
 import App from "../src/App";
 
-const Document: Component<{ initialURL?: string }> = ({ initialURL }) => {
+const Document: Component<{ preloadlist?: string[]; initialURL?: string }> = ({
+  initialURL,
+  preloadlist = [],
+}) => {
   return (
     <html lang="en">
       <head>
@@ -12,6 +15,9 @@ const Document: Component<{ initialURL?: string }> = ({ initialURL }) => {
         <title>Document</title>
         <script src="/js/index.js" type="module"></script>
         <link rel="stylesheet" href="windi.css" />
+        {preloadlist.map((href) => (
+          <link rel="modulepreload" href={href} />
+        ))}
       </head>
       <body>
         <App initialURL={initialURL} />
