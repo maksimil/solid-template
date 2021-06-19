@@ -2,11 +2,11 @@ import { Component, Suspense } from "solid-js";
 import { Router, Link, Route } from "solid-app-router";
 import { routes, HOME, BYE } from "./routes";
 
-const App: Component = () => {
+const App: Component<{ initialURL?: string }> = ({ initialURL }) => {
   return (
     <div>
       <div>div</div>
-      <Router routes={routes} initialURL="/">
+      <Router routes={routes} initialURL={initialURL}>
         <ul>
           <Link href={HOME}>Home</Link>
         </ul>

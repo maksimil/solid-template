@@ -2,7 +2,7 @@ import { Component } from "solid-js";
 import { HydrationScript } from "solid-js/web";
 import App from "../src/App";
 
-const Document: Component = () => {
+const Document: Component<{ initialURL?: string }> = ({ initialURL }) => {
   return (
     <html lang="en">
       <head>
@@ -14,7 +14,7 @@ const Document: Component = () => {
         <link rel="stylesheet" href="windi.css" />
       </head>
       <body>
-        <App />
+        <App initialURL={initialURL} />
         <HydrationScript />
       </body>
     </html>

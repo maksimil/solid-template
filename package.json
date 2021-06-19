@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsc && vite",
     "build:vite": "tsc && vite build",
-    "build:ssg": "rm -rf build && npm run build:ssg-script && node ssg/build/main.js && npm run build:ssg-styles",
+    "build:ssg": "rm -rf build && npm run build:ssg-script && node ssg/export.js && npm run build:ssg-styles",
     "build:ssg-script": "tsc && rollup -c ssg/rollup.config.js",
     "dev:ssg": "npm run build:ssg && http-server ./build",
     "build:ssg-styles": "windicss ./src/**/*.tsx -t -m -o build/windi.css -f tailwind.config.js"
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "solid-app-router": "^0.0.45",
-    "solid-js": "^1.0.0-rc.5"
+    "solid-js": "^1.0.0-rc.5",
+    "solid-ssr": "^0.26.5"
   }
 }

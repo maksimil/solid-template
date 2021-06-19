@@ -2,4 +2,4 @@ import "windi.css";
 import { render } from "solid-js/web";
 import App from "./App";
 
-render(() => <App />, document.body);
+render(() => <App initialURL="/" />, document.body);

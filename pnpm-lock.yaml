@@ -10,6 +10,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.2
   solid-app-router: ^0.0.45
   solid-js: ^1.0.0-rc.5
+  solid-ssr: ^0.26.5
   typescript: ^4.3.4
   vite: ^2.3.6
   vite-plugin-solid: ^2.0.0-rc.2
@@ -19,6 +20,7 @@ specifiers:
 dependencies:
   solid-app-router: 0.0.45_solid-js@1.0.0-rc.5
   solid-js: 1.0.0-rc.5
+  solid-ssr: 0.26.5_solid-js@1.0.0-rc.5
 
 devDependencies:
   '@babel/core': 7.14.5
@@ -1175,6 +1177,14 @@ packages:
     dependencies:
       solid-js: 1.0.0-rc.5
     dev: true
+
+  /solid-ssr/0.26.5_solid-js@1.0.0-rc.5:
+    resolution: {integrity: sha512-NKyma2p7yAd6Fiv+9Ltz0UfBJGLjE1BhTrEx8OHTFdHwaKpQCMidJGpDEvao4DQNxYhljhwASHw3SZ7F/heDLA==}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.0.0-rc.5
+    dev: false
 
   /source-map-js/0.6.2:
     resolution: {integrity: sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==}
