@@ -15,6 +15,7 @@ export default defineConfig([
         format: "esm",
       },
     ],
+    external: ["/js/preloadlist.js"],
     preserveEntrySignatures: false,
     plugins: [
       nodeResolve({
@@ -41,11 +42,17 @@ export default defineConfig([
             }
           });
 
-          fs.mkdirSync("./ssg/build", { recursive: true });
+          ["./ssg/build", "./build/js"].forEach((dir) => {
+            fs.mkdirSync(dir, { recursive: true });
+          });
 
-          fs.writeFileSync(
-            "./ssg/build/preloadlist.js",
-            `export default ${JSON.stringify(preloadlist)};`
+          [("./ssg/build/preloadlist.js", "./build/js/preloadlist.js")].forEach(
+            (file) => {
+              fs.writeFileSync(
+                file,
+                `export default ${JSON.stringify(preloadlist)};`
+              );
+            }
           );
         },
       },
