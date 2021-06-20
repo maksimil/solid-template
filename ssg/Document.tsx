@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { HydrationScript } from "solid-js/web";
+import { HydrationScript, NoHydration } from "solid-js/web";
 import App from "../src/App";
 
 const Document: Component<{ preloadlist?: string[]; initialURL?: string }> = ({
@@ -15,9 +15,11 @@ const Document: Component<{ preloadlist?: string[]; initialURL?: string }> = ({
         <title>Document</title>
         <script src="/js/index.js" type="module"></script>
         <link rel="stylesheet" href="windi.css" />
-        {preloadlist.map((href) => (
-          <link rel="modulepreload" href={href} />
-        ))}
+        <NoHydration>
+          {preloadlist.map((href) => (
+            <link rel="modulepreload" href={href} />
+          ))}
+        </NoHydration>
       </head>
       <body>
         <App initialURL={initialURL} />

@@ -9,7 +9,7 @@ specifiers:
   rollup: ^2.52.1
   rollup-plugin-terser: ^7.0.2
   solid-app-router: ^0.0.45
-  solid-js: ^1.0.0-rc.5
+  solid-js: ^1.0.0-rc.7
   solid-ssr: ^0.26.5
   typescript: ^4.3.4
   vite: ^2.3.6
@@ -18,9 +18,9 @@ specifiers:
   windicss: ^3.1.3
 
 dependencies:
-  solid-app-router: 0.0.45_solid-js@1.0.0-rc.5
-  solid-js: 1.0.0-rc.5
-  solid-ssr: 0.26.5_solid-js@1.0.0-rc.5
+  solid-app-router: 0.0.45_solid-js@1.0.0-rc.7
+  solid-js: 1.0.0-rc.7
+  solid-ssr: 0.26.5_solid-js@1.0.0-rc.7
 
 devDependencies:
   '@babel/core': 7.14.5
@@ -1159,16 +1159,21 @@ packages:
       object-inspect: 1.10.3
     dev: true
 
-  /solid-app-router/0.0.45_solid-js@1.0.0-rc.5:
+  /solid-app-router/0.0.45_solid-js@1.0.0-rc.7:
     resolution: {integrity: sha512-tWsZS1B8ClAxNcZgrYPbke5ebz0TN9dS/z4BotN6NVWE1mfW3k0EWvYKwvrefCyRlKu3boruEJe5yf3XxKxBtg==}
     peerDependencies:
       solid-js: '*'
     dependencies:
-      solid-js: 1.0.0-rc.5
+      solid-js: 1.0.0-rc.7
     dev: false
 
   /solid-js/1.0.0-rc.5:
     resolution: {integrity: sha512-0jGV4DucYQPGMsXPoYzg0l5JucrMjE9VqH5Pfbi9WivJU7v3YS0hl2zWis89GFML5cYuCRErZ+qcquwzMrRgaA==}
+    dev: true
+
+  /solid-js/1.0.0-rc.7:
+    resolution: {integrity: sha512-BCDEMC04eu9MehpWn6AfWb5rtsITtnZ8pRzlWNoiFEg77q+q+mVu9nwlLCRVfSfsaErq05xhlvWwoG6N1ak9RA==}
+    dev: false
 
   /solid-refresh/0.1.2_solid-js@1.0.0-rc.5:
     resolution: {integrity: sha512-irpGTZcn9xtzTQZhHslIEB4D1zYpWizT6GZ15GXyQE/gFBn6bKo53umQGmhq3NqRFqPXXavFDhiEQnyC08gzNg==}
@@ -1178,12 +1183,12 @@ packages:
       solid-js: 1.0.0-rc.5
     dev: true
 
-  /solid-ssr/0.26.5_solid-js@1.0.0-rc.5:
+  /solid-ssr/0.26.5_solid-js@1.0.0-rc.7:
     resolution: {integrity: sha512-NKyma2p7yAd6Fiv+9Ltz0UfBJGLjE1BhTrEx8OHTFdHwaKpQCMidJGpDEvao4DQNxYhljhwASHw3SZ7F/heDLA==}
     peerDependencies:
       solid-js: '*'
     dependencies:
-      solid-js: 1.0.0-rc.5
+      solid-js: 1.0.0-rc.7
     dev: false
 
   /source-map-js/0.6.2:
